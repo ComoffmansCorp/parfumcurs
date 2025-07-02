@@ -28,7 +28,6 @@ const ProductCard = ({ product }) => {
 
     const handleFavoriteClick = (e) => {
         e.stopPropagation();
-        // Здесь будет логика добавления в избранное
     };
 
     const handleImageLoad = () => {

@@ -1,0 +1,67 @@
+:root {
+    /* Основные цвета */
+    --primary-color: #6b9bd1;
+    --secondary-color: #8eb8e5;
+    --accent-color: #4c7fc7;
+    --accent-light: #a7cdf0;
+    --accent-color-rgb: 76, 127, 199;
+    --accent-light-rgb: 167, 205, 240;
+    /* Фоновые цвета */
+    --background-primary: linear-gradient(135deg, #e0f2ff 0%, #f5f9ff 100%);
+    --background-secondary: rgba(255, 255, 255, 0.95);
+    --background-accent: #f0f7ff;
+    --background-glass: rgba(255, 255, 255, 0.8);
+    /* Текстовые цвета */
+    --text-primary: #2c5282;
+    --text-secondary: #4a5568;
+    --text-light: #718096;
+    /* Служебные цвета */
+    --shadow-color: rgba(108, 155, 209, 0.15);
+    --border-color: rgba(108, 155, 209, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-background: rgba(255, 255, 255, 0.7);
+    /* Анимация */
+    --transition-speed: 0.4s;
+    --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+    /* Скругления */
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 20px;
+    --border-radius-xl: 30px;
+    /* Размеры контейнера */
+    --container-width: 1440px;
+    --header-height: 80px;
+    /* Отступы */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 64px;
+    /* Типографика */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-md: 1.125rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 2rem;
+    --font-size-2xl: 2.75rem;
+    --font-size-3xl: 3.75rem;
+    /* Толщина шрифта */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    /* Эффекты */
+    --glass-blur: blur(20px);
+    --glass-shadow: 0 8px 32px rgba(108, 155, 209, 0.15);
+    /* Дополнительные эффекты */
+    --text-shadow: 0 2px 4px rgba(108, 155, 209, 0.1);
+    --hover-transform: translateY(-2px);
+    /* Градиенты */
+    --gradient-primary: linear-gradient(135deg, #6b9bd1 0%, #8eb8e5 100%);
+    --gradient-accent: linear-gradient(135deg, #4c7fc7 0%, #a7cdf0 100%);
+    --gradient-light: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+}

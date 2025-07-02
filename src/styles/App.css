@@ -1,0 +1,255 @@
+.App {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Основные стили приложения */
+
+.app {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--background-primary) 0%, var(--background-secondary) 50%, var(--background-accent) 100%);
+    position: relative;
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.app::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 0% 0%, var(--background-accent) 0%, transparent 50%), radial-gradient(circle at 100% 100%, var(--background-accent) 0%, transparent 50%);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.main-content {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+    min-height: calc(100vh - var(--header-height));
+    flex: 1 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Общие стили для стеклянного эффекта */
+
+.glass {
+    background: var(--glass-background);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+
+/* Градиентный текст */
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* Анимации для появления контента */
+
+.fade-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity var(--transition-speed) var(--transition-function), transform var(--transition-speed) var(--transition-function);
+}
+
+
+/* Стили для заголовков секций */
+
+.section-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--accent-color);
+}
+
+
+/* Стили для кнопок */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: all var(--transition-speed) var(--transition-function);
+    gap: var(--spacing-sm);
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+
+/* Стили для карточек товаров */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+    padding: var(--spacing-md);
+}
+
+
+/* Карточка продукта */
+
+.product-card {
+    background: var(--background-secondary);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: var(--spacing-md);
+}
+
+.product-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xs);
+    font-weight: var(--font-weight-medium);
+}
+
+.product-price {
+    font-size: var(--font-size-md);
+    color: var(--accent-color);
+    font-weight: var(--font-weight-bold);
+}
+
+.product-description {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin: var(--spacing-xs) 0;
+}
+
+
+/* Адаптивность */
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: var(--spacing-lg);
+    }
+    .main-content {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    .section-title {
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .main-content {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+    .btn {
+        width: 100%;
+    }
+}

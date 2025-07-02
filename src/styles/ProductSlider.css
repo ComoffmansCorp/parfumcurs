@@ -1,0 +1,145 @@
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.slider-window {
+    overflow: hidden;
+    margin: 20px 0;
+    border-radius: var(--border-radius);
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.slider-slide {
+    flex: 0 0 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.slider-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.8s forwards;
+}
+
+.slider-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    filter: brightness(1.1);
+    z-index: 2;
+}
+
+.slider-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.slider-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.slider-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: var(--glass-background);
+    backdrop-filter: blur(10px);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.nav-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.nav-btn.left {
+    left: 0;
+}
+
+.nav-btn.right {
+    right: 0;
+}
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border: none;
+    border-radius: 50%;
+    background: var(--text-color);
+    opacity: 0.3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    opacity: 0.5;
+}
+
+.dot.active {
+    opacity: 1;
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-slide {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .slider-wrapper {
+        padding: 0 20px;
+    }
+}
+
+.slider-slide[data-active="true"] .slider-item {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    z-index: 2;
+}

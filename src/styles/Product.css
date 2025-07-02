@@ -1,0 +1,416 @@
+.product-page {
+    min-height: calc(100vh - var(--footer-height));
+    padding-top: var(--header-height);
+    margin-bottom: var(--footer-height);
+    background: var(--background-primary);
+    position: relative;
+    z-index: 1;
+}
+
+.product-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+
+/* Кнопка возврата */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-5px);
+}
+
+
+/* Основной layout */
+
+.product-layout {
+    display: grid;
+    grid-template-columns: minmax(300px, 2fr) 3fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+
+/* Галерея */
+
+.product-gallery {
+    position: sticky;
+    top: calc(var(--header-height) + 2rem);
+}
+
+.main-image {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.main-image:hover img {
+    transform: scale(1.05);
+}
+
+
+/* Информация о продукте */
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.product-header {
+    margin-bottom: 1rem;
+}
+
+.product-brand {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.product-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.product-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+
+/* Рейтинг */
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stars {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.star {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+.star.active {
+    color: #FFD700;
+}
+
+.rating-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+
+/* Блок покупки */
+
+.purchase-section {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.price-block {
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.price-note {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.buy-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Секции с информацией */
+
+.description-section,
+.fragrance-section,
+.specs-section {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.description-section h2,
+.fragrance-section h2,
+.specs-section h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.description-section p {
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+
+/* Пирамида аромата */
+
+.fragrance-pyramid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.note-group h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.note {
+    padding: 0.4rem 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.note:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* Характеристики */
+
+.specs-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.spec-label {
+    color: var(--text-secondary);
+}
+
+.spec-value {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+
+/* Состояния загрузки и ошибки */
+
+.product-loading,
+.product-error {
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.product-error h2 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.product-error p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Адаптивность */
+
+@media (max-width: 1200px) {
+    .product-container {
+        padding: 1.5rem;
+    }
+    .product-layout {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .product-layout {
+        grid-template-columns: 1fr;
+    }
+    .product-gallery {
+        position: relative;
+        top: 0;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .fragrance-pyramid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        padding: 1rem;
+    }
+    .product-title {
+        font-size: 2rem;
+    }
+    .purchase-section {
+        padding: 1rem;
+    }
+    .price {
+        font-size: 1.8rem;
+    }
+    .fragrance-pyramid {
+        grid-template-columns: 1fr;
+    }
+    .spec-item {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-container {
+        padding: 0.8rem;
+    }
+    .product-title {
+        font-size: 1.8rem;
+    }
+    .description-section,
+    .fragrance-section,
+    .specs-section {
+        padding: 1rem;
+    }
+}
+
+
+/* Уведомление о добавлении в корзину */
+
+.cart-notification {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease, fadeOut 0.3s ease 1.7s;
+    z-index: 1000;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

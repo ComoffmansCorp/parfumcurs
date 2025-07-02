@@ -1,0 +1,3 @@
+[submodule "IdeaProjects/tacktracker/IdeaProjects/tacktracker/tasktracer-java"]
+	path = IdeaProjects/tacktracker/IdeaProjects/tacktracker/tasktracer-java
+	url = https://github.com/ComoffmansCorp/tasktracer-java.git

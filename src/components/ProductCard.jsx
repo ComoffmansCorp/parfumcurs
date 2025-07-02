@@ -10,7 +10,6 @@ const ProductCard = ({ product }) => {
     const { addToCart } = useCart();
     const navigate = useNavigate();
 
-    // Отладочная информация
     useEffect(() => {
         console.log('ProductCard received product:', product);
     }, [product]);

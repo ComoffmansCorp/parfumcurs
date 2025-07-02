@@ -33,8 +33,7 @@ const ProductCard = ({ product }) => {
     const handleImageLoad = () => {
         setImageLoaded(true);
     };
-
-    // Проверяем наличие необходимых данных
+//proverka
     if (!product) {
         console.warn('ProductCard: No product data provided');
         return null;

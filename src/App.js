@@ -24,55 +24,35 @@ import Login from "./pages/Login";
 
 function App() {
     const { isAuthenticated } = useAuth();
-    return ( <
-        Router >
-        <
-        div className = "app" >
-        <
-        ScrollToTop / >
-        <
-        Header / >
-        <
-        div className = "app-content" >
-        <
-        Routes >
-        <
-        Route path = "/"
-        element = { < Home / > }
-        /> <
-        Route path = "/catalog"
-        element = { < Catalog / > }
-        /> <
-        Route path = "/product/:id"
-        element = { < Product / > }
-        /> <
-        Route path = "/cart"
-        element = { < Cart / > }
-        /> <
-        Route path = "/checkout"
-        element = { isAuthenticated ? < Checkout / > : < Navigate to = "/login" / > }
-        /> <
-        Route path = "/profile"
-        element = { < Profile / > }
-        /> <
-        Route path = "/about"
-        element = { < About / > }
-        /> <
-        Route path = "/contacts"
-        element = { < Contacts / > }
-        /> <
-        Route path = "/register"
-        element = { < Register / > }
-        /> <
-        Route path = "/login"
-        element = { < Login / > }
-        /> < /
-        Routes > <
-        /div> <
-        Footer / >
-        <
-        /div> < /
-        Router >
+    
+    return (
+        <Router>
+            <div className="app">
+                <ScrollToTop />
+                <Header />
+                <div className="app-content">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/catalog" element={<Catalog />} />
+                        <Route path="/product/:id" element={<Product />} />
+                        <Route path="/cart" element={<Cart />} />
+                        <Route 
+                            path="/checkout" 
+                            element={isAuthenticated ? <Checkout /> : <Navigate to="/login" />} 
+                        />
+                        <Route 
+                            path="/profile" 
+                            element={isAuthenticated ? <Profile /> : <Navigate to="/login" />} 
+                        />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contacts" element={<Contacts />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/login" element={<Login />} />
+                    </Routes>
+                </div>
+                <Footer />
+            </div>
+        </Router>
     );
 }
 
